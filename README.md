@@ -12,7 +12,7 @@
 
 ## Instructions pour le cours IFT3913
 
-Vous pouvez build le projet et générer les rapports jacoco covergae en exécutant la commande suivante.
+Vous pouvez build le projet et générer les rapports jacoco coverage en exécutant la commande suivante.
 
 ```
 mvn verify -Pcoverage
