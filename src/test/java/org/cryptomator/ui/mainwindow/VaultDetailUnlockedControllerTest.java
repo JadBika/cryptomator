@@ -19,6 +19,7 @@ import org.cryptomator.ui.wrongfilealert.WrongFileAlertComponent;
 
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.concurrent.CompletableFuture;
 
 @ExtendWith(MockitoExtension.class)
 public class VaultDetailUnlockedControllerTest {
@@ -84,5 +85,22 @@ public class VaultDetailUnlockedControllerTest {
 		verify(vaultServiceMock).reveal(vaultMock);
 
 		// Intention : Vérifier que la méthode revealAccessLocation appelle correctement vaultService.reveal avec le bon Vault.
+	}
+
+	@Test
+	public void testLock() {
+		// Intention : Vérifier que la méthode lock appelle startLockWorkflow avec le bon Vault et Stage.
+
+		// Arrange
+		when(appWindowsMock.startLockWorkflow(any(Vault.class), any(Stage.class))).thenReturn(CompletableFuture.completedFuture(null));
+
+		// Act
+		controller.lock();
+
+		// Assert
+		verify(appWindowsMock, times(1)).startLockWorkflow(vaultMock, mainWindowMock);
+		verifyNoMoreInteractions(appWindowsMock);
+
+		// Oracle : Confirme que startLockWorkflow est appelé une seule fois avec les bons paramètres.
 	}
 }
