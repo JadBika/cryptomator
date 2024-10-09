@@ -22,7 +22,7 @@ mvn verify -Pcoverage
 
 ## 10 nouveaux tests pour le cours IFT3913
 
-### Méthodes et Tests Documentés
+### Méthodes et tests documentés
 
 #### 1. `fulfillsMinimumRequirements(CharSequence)`
 - **Localisation :** `org.cryptomator.ui.changepassword.PasswordStrengthUtil`
