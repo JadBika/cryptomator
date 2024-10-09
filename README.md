@@ -59,7 +59,19 @@ mvn verify -Pcoverage
   - **Choix de la méthode :**  
     Il est essentiel de tester les cas où un score invalide est fourni pour s’assurer que la méthode ne retourne pas de description incorrecte ou incohérente. Ce test garantit que les cas non gérés par le `ResourceBundle` ne génèrent pas de comportement imprévu.
 
+#### 6. `revealAccessLocation()`
+- **Localisation :** `org.cryptomator.ui.somecontroller.ControllerClass`
 
+- **Test associé :** `testRevealAccessLocation`
+  - **Choix de la méthode :**  
+    Tester cette interaction est essentiel pour s'assurer que le contrôleur effectue correctement la demande d'affichage de l'emplacement d'accès du coffre-fort. Ce test garantit que le bon service est appelé avec les bons paramètres.
+
+#### 7. `lock()`
+- **Localisation :** `org.cryptomator.ui.somecontroller.ControllerClass`
+  
+- **Test associé :** `testLock`
+  - **Choix de la méthode :**  
+    Tester cette interaction garantit que le processus de verrouillage d'un coffre est correctement initié et que l'interface utilisateur (fenêtre principale) est correctement prise en compte. Cela permet de vérifier que l'application fonctionne comme prévu lorsqu'un coffre est verrouillé.
 
 ## Supporting Cryptomator
 
