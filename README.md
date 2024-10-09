@@ -20,9 +20,16 @@ mvn verify -Pcoverage
 
 -----
 
-## Documentation des 10 nouveaux tests
+## 10 nouveaux tests pour le cours IFT3913
 
-// TODO
+### Méthodes et Tests Documentés
+
+#### 1. `fulfillsMinimumRequirements(CharSequence)`
+- **Localisation :** `org.cryptomator.ui.changepassword.PasswordStrengthUtil`
+  
+- **Test associé :** `testFulfillsMinimumRequirements_PasswordTooShort`    
+  - **Choix de la méthode :**  
+    La longueur du mot de passe est un critère fondamental pour la sécurité des utilisateurs. Ce test permet de vérifier qu'une des premières barrières de sécurité (longueur minimale) fonctionne correctement.
 
 -----
 
