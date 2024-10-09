@@ -30,11 +30,11 @@ public class PasswordStrengthUtilTest {
 		Assertions.assertEquals(4, result2);
 	}
 
-
-	// NEW TESTS
-
 	@Test
 	public void testFulfillsMinimumRequirements_PasswordTooShort() {
+		// Test to ensure that a password shorter than the minimum length (8 characters)
+		// fails the minimum requirements check.
+
 		// Arrange
 		Environment mockEnv = Mockito.mock(Environment.class);
 		Mockito.when(mockEnv.getMinPwLength()).thenReturn(8);
@@ -49,6 +49,9 @@ public class PasswordStrengthUtilTest {
 
 	@Test
 	public void testFulfillsMinimumRequirements_PasswordMeetsRequirement() {
+		// Test to ensure that a password meeting the minimum length requirement (8 characters)
+		// passes the minimum requirements check.
+
 		// Arrange
 		Environment mockEnv = Mockito.mock(Environment.class);
 		Mockito.when(mockEnv.getMinPwLength()).thenReturn(8);
@@ -63,6 +66,9 @@ public class PasswordStrengthUtilTest {
 
 	@Test
 	public void testGetStrengthDescription_PasswordTooShort() {
+		// Test to ensure that the method returns the correct "too short" message
+		// when the password does not meet the minimum length requirement.
+
 		// Arrange
 		ResourceBundle mockBundle = Mockito.mock(ResourceBundle.class);
 		Mockito.when(mockBundle.getString("passwordStrength.messageLabel.tooShort"))
@@ -80,6 +86,9 @@ public class PasswordStrengthUtilTest {
 
 	@Test
 	public void testGetStrengthDescription_ValidScore() {
+		// Test to ensure that a valid password score (3) returns the correct strength description
+		// from the ResourceBundle ("Password strength: Fair").
+
 		// Arrange
 		ResourceBundle mockBundle = Mockito.mock(ResourceBundle.class);
 		String key = "passwordStrength.messageLabel.3";
@@ -99,6 +108,9 @@ public class PasswordStrengthUtilTest {
 
 	@Test
 	public void testGetStrengthDescription_InvalidScore() {
+		// Test to ensure that an invalid password score (99) returns an empty string,
+		// as there is no description available for this score in the ResourceBundle.
+
 		// Arrange
 		ResourceBundle mockBundle = Mockito.mock(ResourceBundle.class);
 		Environment mockEnv = Mockito.mock(Environment.class);
