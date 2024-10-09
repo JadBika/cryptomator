@@ -31,7 +31,35 @@ mvn verify -Pcoverage
   - **Choix de la méthode :**  
     La longueur du mot de passe est un critère fondamental pour la sécurité des utilisateurs. Ce test permet de vérifier qu'une des premières barrières de sécurité (longueur minimale) fonctionne correctement.
 
------
+#### 2. `fulfillsMinimumRequirements(CharSequence)`
+- **Localisation :** `org.cryptomator.ui.changepassword.PasswordStrengthUtil`
+  
+- **Test associé :** `testFulfillsMinimumRequirements_PasswordMeetsRequirement`
+  - **Choix de la méthode :**  
+    Tester que la longueur minimale des mots de passe est bien respectée est essentiel pour garantir la sécurité des utilisateurs. Ce test couvre le cas où le mot de passe atteint cette longueur et est accepté.
+
+#### 3. `getStrengthDescription(Number)`
+- **Localisation :** `org.cryptomator.ui.changepassword.PasswordStrengthUtil`
+  
+- **Test associé :** `testGetStrengthDescription_PasswordTooShort`    
+  - **Choix de la méthode :**  
+    Tester les messages de retour pour des mots de passe trop courts est important pour offrir des retours utilisateurs précis et améliorer l'expérience utilisateur. Ce test garantit que les messages d'erreur sont clairs et bien formatés.
+
+#### 4. `getStrengthDescription(Number)`
+- **Localisation :** `org.cryptomator.ui.changepassword.PasswordStrengthUtil`
+
+- **Test associé :** `testGetStrengthDescription_ValidScore`
+  - **Choix de la méthode :**  
+    Assurer la correspondance entre les scores de force des mots de passe et les descriptions textuelles est crucial pour offrir des retours utilisateurs clairs et compréhensibles. Ce test vérifie que chaque score valide renvoie la bonne description.
+
+#### 5. `getStrengthDescription(Number)`
+- **Localisation :** `org.cryptomator.ui.changepassword.PasswordStrengthUtil`
+
+- **Test associé :** `testGetStrengthDescription_InvalidScore`
+  - **Choix de la méthode :**  
+    Il est essentiel de tester les cas où un score invalide est fourni pour s’assurer que la méthode ne retourne pas de description incorrecte ou incohérente. Ce test garantit que les cas non gérés par le `ResourceBundle` ne génèrent pas de comportement imprévu.
+
+
 
 ## Supporting Cryptomator
 
