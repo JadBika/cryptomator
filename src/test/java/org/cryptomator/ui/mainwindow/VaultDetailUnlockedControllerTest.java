@@ -75,6 +75,9 @@ public class VaultDetailUnlockedControllerTest {
 
 	@Test
 	public void testRevealAccessLocation() {
+		// Test to ensure that the revealAccessLocation method correctly calls
+		// vaultService.reveal with the appropriate Vault.
+
 		// Arrange
 		doNothing().when(vaultServiceMock).reveal(any(Vault.class));
 
@@ -84,12 +87,12 @@ public class VaultDetailUnlockedControllerTest {
 		// Assert
 		verify(vaultServiceMock).reveal(vaultMock);
 
-		// Intention : Vérifier que la méthode revealAccessLocation appelle correctement vaultService.reveal avec le bon Vault.
 	}
 
 	@Test
 	public void testLock() {
-		// Intention : Vérifier que la méthode lock appelle startLockWorkflow avec le bon Vault et Stage.
+		// Test to ensure that the method lock calls startLockWorkflow with the correct Vault and Stage (main window),
+		// and that no other interactions with appWindowsMock occur.
 
 		// Arrange
 		when(appWindowsMock.startLockWorkflow(any(Vault.class), any(Stage.class))).thenReturn(CompletableFuture.completedFuture(null));
@@ -101,6 +104,5 @@ public class VaultDetailUnlockedControllerTest {
 		verify(appWindowsMock, times(1)).startLockWorkflow(vaultMock, mainWindowMock);
 		verifyNoMoreInteractions(appWindowsMock);
 
-		// Oracle : Confirme que startLockWorkflow est appelé une seule fois avec les bons paramètres.
 	}
 }
