@@ -87,6 +87,34 @@ mvn verify -Pcoverage
   - **Choix de la méthode :**  
     Tester la modification des passphrases est essentiel pour garantir la sécurité des données sensibles. L’utilisation de données aléatoires générées par `Faker` permet de tester divers scénarios réalistes.
 
+#### 10. `getAppVersion()`
+- **Localisation :** `org.cryptomator.common.Environment`
+
+- **Test associé :** `testGetAppVersion`
+  - **Choix de la méthode :**  
+    Tester la gestion de la version de l'application est crucial pour la maintenance et le déploiement. Ce test garantit que l'application renvoie la bonne version ou un indicateur de version de développement lorsqu'elle est en cours de développement.
+
+#### 11. `finish()`
+- **Localisation :** `org.cryptomator.ui.forgetpassword.ForgerPasswordController`
+  
+- **Test associé :** `testFinishKeychainSupported`
+  - **Choix de la méthode :**  
+    Il est important de tester cette interaction pour garantir que les passphrases sont correctement supprimées et que l'interface utilisateur se ferme comme prévu lorsque le gestionnaire de clés est pris en charge.
+
+#### 12. `finish()`
+- **Localisation :** `org.cryptomator.ui.forgetpassword.ForgerPasswordController`
+  
+- **Test associé :** `testFinishDeletePassphraseFails`
+  - **Choix de la méthode :**  
+    Tester la gestion des exceptions est essentiel pour garantir que l'application reste robuste même en cas d'erreurs. Ce test s'assure que la suppression de la passphrase échouée est correctement gérée, sans laisser l'interface dans un état incohérent.
+
+#### 13. `getApiBaseUrl()`
+- **Localisation :** `org.cryptomator.ui.keyloading.hub.HubConfig`
+  
+- **Test associé :** `testGetApiBaseUrlWithDevicesResourceUrl`
+  - **Choix de la méthode :**  
+    Il est important de tester ce comportement pour garantir que l'API fonctionne correctement même si `apiBaseUrl` n'est pas explicitement défini. Ce test s'assure que la méthode peut utiliser un fallback (`devicesResourceUrl`) pour dériver l'URL de base.
+
 Cryptomator is provided free of charge as an open-source project despite the high development effort and is therefore dependent on donations. If you are also interested in further development, we offer you the opportunity to support us:
 
 - [One-time or recurring donation via Cryptomator's website.](https://cryptomator.org/#donate)
