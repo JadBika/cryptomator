@@ -115,7 +115,7 @@ mvn verify -Pcoverage
   - **Choix de la méthode :**  
     Il est important de tester ce comportement pour garantir que l'API fonctionne correctement même si `apiBaseUrl` n'est pas explicitement défini. Ce test s'assure que la méthode peut utiliser un fallback (`devicesResourceUrl`) pour dériver l'URL de base.
 
-<br>
+<br> <br>
 
 Cryptomator is provided free of charge as an open-source project despite the high development effort and is therefore dependent on donations. If you are also interested in further development, we offer you the opportunity to support us:
 
