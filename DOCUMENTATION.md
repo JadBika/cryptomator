@@ -66,7 +66,6 @@
     Tester la gestion des exceptions est essentiel pour garantir que l'application reste robuste même en cas d'erreurs. Ce test s'assure que la suppression de la passphrase échouée est correctement gérée, sans laisser l'interface dans un état incohérent.
 
 #### 10. `serialized()`
-
 - **Localisation :** `org.cryptomator.common.settings.VaultSettings` [Lien](src/test/java/org/cryptomator/common/settings/VaultSettingsTest.java)
 
 - **Test associé :** `testSerializedWithFaker`
