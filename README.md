@@ -25,21 +25,21 @@ mvn verify -Pcoverage
 ### Méthodes et tests documentés
 
 #### 1. `fulfillsMinimumRequirements(CharSequence)`
-- **Localisation :** `org.cryptomator.ui.changepassword.PasswordStrengthUtil`
+- **Localisation :** `org.cryptomator.ui.changepassword.PasswordStrengthUtil` [Lien](src/test/java/org/cryptomator/ui/changepassword/PasswordStrengthUtilTest.java)
   
 - **Test associé :** `testFulfillsMinimumRequirements_PasswordTooShort`    
   - **Choix de la méthode :**  
     La longueur du mot de passe est un critère fondamental pour la sécurité des utilisateurs. Ce test permet de vérifier qu'une des premières barrières de sécurité (longueur minimale) fonctionne correctement.
 
 #### 2. `getStrengthDescription(Number)`
-- **Localisation :** `org.cryptomator.ui.changepassword.PasswordStrengthUtil`
+- **Localisation :** `org.cryptomator.ui.changepassword.PasswordStrengthUtil` [Lien](src/test/java/org/cryptomator/ui/changepassword/PasswordStrengthUtilTest.java)
   
 - **Test associé :** `testGetStrengthDescription_PasswordTooShort`    
   - **Choix de la méthode :**  
     Tester les messages de retour pour des mots de passe trop courts est important pour offrir des retours utilisateurs précis et améliorer l'expérience utilisateur. Ce test garantit que les messages d'erreur sont clairs et bien formatés.
 
 #### 3. `getStrengthDescription(Number)`
-- **Localisation :** `org.cryptomator.ui.changepassword.PasswordStrengthUtil`
+- **Localisation :** `org.cryptomator.ui.changepassword.PasswordStrengthUtil` [Lien](src/test/java/org/cryptomator/ui/changepassword/PasswordStrengthUtilTest.java)
 
 - **Test associé :** `testGetStrengthDescription_ValidScore`
   - **Choix de la méthode :**  
