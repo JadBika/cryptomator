@@ -15,6 +15,10 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.function.Predicate;
 
+import org.mockito.ArgumentCaptor;
+import static org.mockito.Mockito.*;
+import java.nio.file.Path;
+
 public class RecoveryKeyFactoryTest {
 
 	private final WordEncoder wordEncoder = new WordEncoder();
@@ -93,4 +97,38 @@ public class RecoveryKeyFactoryTest {
 		Assertions.assertEquals(extendedValidationResult, result);
 	}
 
+	@Test
+	@DisplayName("newMasterkeyFileWithPassphrase() should create new masterkey and persist it")
+	public void testNewMasterkeyFileWithPassphrase() throws IOException {
+		// Arrange
+		Path vaultPath = Path.of("path/to/vault");
+		String recoveryKey = """
+        pathway lift abuse plenty export texture gentleman landscape beyond ceiling around leaf cafe charity \
+        border breakdown victory surely computer cat linger restrict infer crowd live computer true written amazed \
+        investor boot depth left theory snow whereby terminal weekly reject happiness circuit partial cup ad \
+        """;
+		CharSequence newPassword = "newSecretPassphrase";
+
+		// Simule la récupération d'une clé brute à partir de la clé de récupération
+		byte[] rawKey = new byte[64];
+		Masterkey masterkeyMock = mock(Masterkey.class);
+		when(masterkeyMock.getEncoded()).thenReturn(rawKey);
+
+		// Act
+		inTest.newMasterkeyFileWithPassphrase(vaultPath, recoveryKey, newPassword);
+
+		// Assert
+		// Vérifie que la méthode persist a été appelée avec les bons arguments
+		ArgumentCaptor<Masterkey> masterkeyCaptor = ArgumentCaptor.forClass(Masterkey.class);
+		ArgumentCaptor<Path> pathCaptor = ArgumentCaptor.forClass(Path.class);
+		ArgumentCaptor<CharSequence> passwordCaptor = ArgumentCaptor.forClass(CharSequence.class);
+
+		verify(masterkeyFileAccess).persist(masterkeyCaptor.capture(), pathCaptor.capture(), passwordCaptor.capture());
+
+		// Vérifie que le chemin du fichier est correct
+		Assertions.assertEquals(vaultPath.resolve("masterkey.cryptomator"), pathCaptor.getValue());
+
+		// Vérifie que le mot de passe utilisé est correct
+		Assertions.assertEquals(newPassword, passwordCaptor.getValue());
+	}
 }

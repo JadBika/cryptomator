@@ -123,4 +123,17 @@ public class EnvironmentTest {
 		}
 	}
 
+	@Test
+	@DisplayName("getAppVersion() returns the correct app version or 'SNAPSHOT' when not set")
+	public void testGetAppVersion() {
+		// Cas 1: Propriété appVersion définie
+		System.setProperty("cryptomator.appVersion", "1.14.1");
+		String appVersion = env.getAppVersion();
+		Assertions.assertEquals("1.14.1", appVersion, "Expected appVersion to return '1.14.1' when the property is set.");
+
+		// Cas 2: Propriété appVersion non définie
+		System.clearProperty("cryptomator.appVersion");
+		appVersion = env.getAppVersion();
+		Assertions.assertEquals("SNAPSHOT", appVersion, "Expected appVersion to return 'SNAPSHOT' when the property is not set.");
+	}
 }
