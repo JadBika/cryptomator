@@ -95,14 +95,14 @@ mvn verify -Pcoverage
     Tester la gestion de la version de l'application est crucial pour la maintenance et le déploiement. Ce test garantit que l'application renvoie la bonne version ou un indicateur de version de développement lorsqu'elle est en cours de développement.
 
 #### 11. `finish()`
-- **Localisation :** `org.cryptomator.ui.forgetpassword.ForgerPasswordController`
+- **Localisation :** `org.cryptomator.ui.forgetpassword.ForgetPasswordController`
   
 - **Test associé :** `testFinishKeychainSupported`
   - **Choix de la méthode :**  
     Il est important de tester cette interaction pour garantir que les passphrases sont correctement supprimées et que l'interface utilisateur se ferme comme prévu lorsque le gestionnaire de clés est pris en charge.
 
 #### 12. `finish()`
-- **Localisation :** `org.cryptomator.ui.forgetpassword.ForgerPasswordController`
+- **Localisation :** `org.cryptomator.ui.forgetpassword.ForgetPasswordController`
   
 - **Test associé :** `testFinishDeletePassphraseFails`
   - **Choix de la méthode :**  
