@@ -18,8 +18,10 @@ public class HubConfigTest {
 	}
 
 	@Test
-	@DisplayName("getApiBaseUrl() returns the correct API base URL when apiBaseUrl is null but devicesResourceUrl is set")
 	public void testGetApiBaseUrlWithDevicesResourceUrl() {
+		// Test to ensure that getApiBaseUrl returns the correct base URL when apiBaseUrl is null
+		// but devicesResourceUrl is set. The base URL should be derived from devicesResourceUrl.
+
 		// Arrange
 		HubConfig config = new HubConfig();
 		config.apiBaseUrl = null;
@@ -31,5 +33,4 @@ public class HubConfigTest {
 		// Assert
 		Assertions.assertEquals("https://example.com/", apiBaseUrl.toString(), "Expected API base URL to resolve based on devicesResourceUrl");
 	}
-
 }
