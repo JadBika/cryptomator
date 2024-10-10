@@ -4,7 +4,6 @@ import org.cryptomator.integrations.keychain.KeychainAccessException;
 import org.cryptomator.common.keychain.KeychainManager;
 import org.cryptomator.common.vaults.Vault;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import javafx.beans.property.BooleanProperty;
@@ -30,8 +29,10 @@ public class ForgetPasswordControllerTest {
 	}
 
 	@Test
-	@DisplayName("finish() should delete passphrase and set confirmedResult to true if keychain is supported")
 	public void testFinishKeychainSupported() throws Exception {
+		// Test to ensure that the finish() method deletes the passphrase and closes the window if the keychain is supported.
+		// Additionally, it verifies that confirmedResult is set to true.
+
 		// Arrange
 		Mockito.when(keychain.isSupported()).thenReturn(true);
 		Mockito.when(vault.getId()).thenReturn("testVaultId");
@@ -46,8 +47,10 @@ public class ForgetPasswordControllerTest {
 	}
 
 	@Test
-	@DisplayName("finish() should set confirmedResult to false if deletePassphrase throws KeychainAccessException")
 	public void testFinishDeletePassphraseFails() throws Exception {
+		// Test to ensure that the finish() method sets confirmedResult to false and closes the window
+		// if deletePassphrase throws a KeychainAccessException.
+
 		// Arrange
 		Mockito.when(keychain.isSupported()).thenReturn(true);
 		Mockito.when(vault.getId()).thenReturn("testVaultId");
