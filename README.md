@@ -31,84 +31,63 @@ mvn verify -Pcoverage
   - **Choix de la méthode :**  
     La longueur du mot de passe est un critère fondamental pour la sécurité des utilisateurs. Ce test permet de vérifier qu'une des premières barrières de sécurité (longueur minimale) fonctionne correctement.
 
-#### 2. `fulfillsMinimumRequirements(CharSequence)`
-- **Localisation :** `org.cryptomator.ui.changepassword.PasswordStrengthUtil`
-  
-- **Test associé :** `testFulfillsMinimumRequirements_PasswordMeetsRequirement`
-  - **Choix de la méthode :**  
-    Tester que la longueur minimale des mots de passe est bien respectée est essentiel pour garantir la sécurité des utilisateurs. Ce test couvre le cas où le mot de passe atteint cette longueur et est accepté.
-
-#### 3. `getStrengthDescription(Number)`
+#### 2. `getStrengthDescription(Number)`
 - **Localisation :** `org.cryptomator.ui.changepassword.PasswordStrengthUtil`
   
 - **Test associé :** `testGetStrengthDescription_PasswordTooShort`    
   - **Choix de la méthode :**  
     Tester les messages de retour pour des mots de passe trop courts est important pour offrir des retours utilisateurs précis et améliorer l'expérience utilisateur. Ce test garantit que les messages d'erreur sont clairs et bien formatés.
 
-#### 4. `getStrengthDescription(Number)`
+#### 3. `getStrengthDescription(Number)`
 - **Localisation :** `org.cryptomator.ui.changepassword.PasswordStrengthUtil`
 
 - **Test associé :** `testGetStrengthDescription_ValidScore`
   - **Choix de la méthode :**  
     Assurer la correspondance entre les scores de force des mots de passe et les descriptions textuelles est crucial pour offrir des retours utilisateurs clairs et compréhensibles. Ce test vérifie que chaque score valide renvoie la bonne description.
 
-#### 5. `getStrengthDescription(Number)`
-- **Localisation :** `org.cryptomator.ui.changepassword.PasswordStrengthUtil`
-
-- **Test associé :** `testGetStrengthDescription_InvalidScore`
-  - **Choix de la méthode :**  
-    Il est essentiel de tester les cas où un score invalide est fourni pour s’assurer que la méthode ne retourne pas de description incorrecte ou incohérente. Ce test garantit que les cas non gérés par le `ResourceBundle` ne génèrent pas de comportement imprévu.
-
-#### 6. `revealAccessLocation()`
+#### 4. `revealAccessLocation()`
 - **Localisation :** `org.cryptomator.ui.mainwindow.VaultDetailUnlockedController`
 
 - **Test associé :** `testRevealAccessLocation`
   - **Choix de la méthode :**  
     Tester cette interaction est essentiel pour s'assurer que le contrôleur effectue correctement la demande d'affichage de l'emplacement d'accès du coffre-fort. Ce test garantit que le bon service est appelé avec les bons paramètres.
 
-#### 7. `lock()`
+#### 5. `lock()`
 - **Localisation :** `org.cryptomator.ui.mainwindow.VaultDetailUnlockedController`
   
 - **Test associé :** `testLock`
   - **Choix de la méthode :**  
     Tester cette interaction garantit que le processus de verrouillage d'un coffre est correctement initié et que l'interface utilisateur (fenêtre principale) est correctement prise en compte. Cela permet de vérifier que l'application fonctionne comme prévu lorsqu'un coffre est verrouillé.
 
-#### 8. `deletePassphrase(String key)`
+#### 6. `deletePassphrase(String key)`
 - **Localisation :** `org.cryptomator.common.keychain.KeychainManager`
 
 - **Test associé :** `testDeletePassphrase`
   - **Choix de la méthode :**  
     Il est important de tester la capacité du gestionnaire de clés à supprimer des passphrases pour garantir la sécurité des données sensibles. Ce test couvre à la fois le stockage, la récupération, et la suppression de la passphrase.
 
-#### 9. `changePassphrase(String key, String description, String newPassphrase)`
+#### 7. `changePassphrase(String key, String description, String newPassphrase)`
 - **Localisation :** `org.cryptomator.common.keychain.KeychainManager`
   
 - **Test associé :** `testChangePassphraseWithFaker`
   - **Choix de la méthode :**  
     Tester la modification des passphrases est essentiel pour garantir la sécurité des données sensibles. L’utilisation de données aléatoires générées par `Faker` permet de tester divers scénarios réalistes.
 
-#### 10. `getAppVersion()`
-- **Localisation :** `org.cryptomator.common.Environment`
-
-- **Test associé :** `testGetAppVersion`
-  - **Choix de la méthode :**  
-    Tester la gestion de la version de l'application est crucial pour la maintenance et le déploiement. Ce test garantit que l'application renvoie la bonne version ou un indicateur de version de développement lorsqu'elle est en cours de développement.
-
-#### 11. `finish()`
+#### 8. `finish()`
 - **Localisation :** `org.cryptomator.ui.forgetpassword.ForgetPasswordController`
   
 - **Test associé :** `testFinishKeychainSupported`
   - **Choix de la méthode :**  
     Il est important de tester cette interaction pour garantir que les passphrases sont correctement supprimées et que l'interface utilisateur se ferme comme prévu lorsque le gestionnaire de clés est pris en charge.
 
-#### 12. `finish()`
+#### 9. `finish()`
 - **Localisation :** `org.cryptomator.ui.forgetpassword.ForgetPasswordController`
   
 - **Test associé :** `testFinishDeletePassphraseFails`
   - **Choix de la méthode :**  
     Tester la gestion des exceptions est essentiel pour garantir que l'application reste robuste même en cas d'erreurs. Ce test s'assure que la suppression de la passphrase échouée est correctement gérée, sans laisser l'interface dans un état incohérent.
 
-#### 13. `getApiBaseUrl()`
+#### 10. `getApiBaseUrl()`
 - **Localisation :** `org.cryptomator.ui.keyloading.hub.HubConfig`
   
 - **Test associé :** `testGetApiBaseUrlWithDevicesResourceUrl`
