@@ -102,6 +102,14 @@ mvn verify -Pcoverage
   - **Choix de la méthode :**
     La sérialisation des paramètres du coffre est cruciale pour la sauvegarde et le chargement des configurations utilisateur. Tester cette méthode avec des données variées assure que tous les champs sont correctement pris en compte.
 
+#### 12. `createVaultStorageLocationReadmeRtf()`
+
+- **Localisation :** `org.cryptomator.ui.addvaultwizard.ReadmeGenerator`
+
+- **Test associé :** `testCreateVaultStorageLocationReadmeRtf`
+  - **Choix de la méthode :**
+    La génération du document RTF est une fonctionnalité essentielle pour fournir aux utilisateurs des instructions claires. Tester cette méthode assure que les utilisateurs recevront un document bien formé avec toutes les informations nécessaires.
+
 <br>
 
 Cryptomator is provided free of charge as an open-source project despite the high development effort and is therefore dependent on donations. If you are also interested in further development, we offer you the opportunity to support us:
