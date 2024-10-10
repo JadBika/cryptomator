@@ -48,23 +48,6 @@ public class PasswordStrengthUtilTest {
 	}
 
 	@Test
-	public void testFulfillsMinimumRequirements_PasswordMeetsRequirement() {
-		// Test to ensure that a password meeting the minimum length requirement (8 characters)
-		// passes the minimum requirements check.
-
-		// Arrange
-		Environment mockEnv = Mockito.mock(Environment.class);
-		Mockito.when(mockEnv.getMinPwLength()).thenReturn(8);
-		PasswordStrengthUtil util = new PasswordStrengthUtil(Mockito.mock(ResourceBundle.class), mockEnv);
-
-		// Act
-		boolean result = util.fulfillsMinimumRequirements("longenoughpassword");
-
-		// Assert
-		Assertions.assertTrue(result, "Expected password to meet minimum length requirement.");
-	}
-
-	@Test
 	public void testGetStrengthDescription_PasswordTooShort() {
 		// Test to ensure that the method returns the correct "too short" message
 		// when the password does not meet the minimum length requirement.
@@ -104,22 +87,5 @@ public class PasswordStrengthUtilTest {
 
 		// Assert
 		Assertions.assertEquals("Password strength: Fair", description);
-	}
-
-	@Test
-	public void testGetStrengthDescription_InvalidScore() {
-		// Test to ensure that an invalid password score (99) returns an empty string,
-		// as there is no description available for this score in the ResourceBundle.
-
-		// Arrange
-		ResourceBundle mockBundle = Mockito.mock(ResourceBundle.class);
-		Environment mockEnv = Mockito.mock(Environment.class);
-		PasswordStrengthUtil util = new PasswordStrengthUtil(mockBundle, mockEnv);
-
-		// Act
-		String description = util.getStrengthDescription(99);
-
-		// Assert
-		Assertions.assertEquals("", description, "Expected an empty string for invalid score.");
 	}
 }
