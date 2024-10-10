@@ -73,7 +73,19 @@ mvn verify -Pcoverage
   - **Choix de la méthode :**  
     Tester cette interaction garantit que le processus de verrouillage d'un coffre est correctement initié et que l'interface utilisateur (fenêtre principale) est correctement prise en compte. Cela permet de vérifier que l'application fonctionne comme prévu lorsqu'un coffre est verrouillé.
 
-## Supporting Cryptomator
+#### 8. `deletePassphrase(String key)`
+- **Localisation :** `org.cryptomator.common.keychain.KeychainManager`
+
+- **Test associé :** `testDeletePassphrase`
+  - **Choix de la méthode :**  
+    Il est important de tester la capacité du gestionnaire de clés à supprimer des passphrases pour garantir la sécurité des données sensibles. Ce test couvre à la fois le stockage, la récupération, et la suppression de la passphrase.
+
+#### 9. `changePassphrase(String key, String description, String newPassphrase)`
+- **Localisation :** `org.cryptomator.common.keychain.KeychainManager`
+  
+- **Test associé :** `testChangePassphraseWithFaker`
+  - **Choix de la méthode :**  
+    Tester la modification des passphrases est essentiel pour garantir la sécurité des données sensibles. L’utilisation de données aléatoires générées par `Faker` permet de tester divers scénarios réalistes.
 
 Cryptomator is provided free of charge as an open-source project despite the high development effort and is therefore dependent on donations. If you are also interested in further development, we offer you the opportunity to support us:
 
