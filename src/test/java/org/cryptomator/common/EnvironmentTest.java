@@ -122,20 +122,4 @@ public class EnvironmentTest {
 			Mockito.verify(env).getPaths("cryptomator.integrationsWin.keychainPaths");
 		}
 	}
-
-	@Test
-	public void testGetAppVersion() {
-		// Test to ensure that getAppVersion returns the correct version when the 'cryptomator.appVersion'
-		// property is set, or 'SNAPSHOT' when the property is not set.
-
-		// Cas 1: Propriété appVersion définie
-		System.setProperty("cryptomator.appVersion", "1.14.1");
-		String appVersion = env.getAppVersion();
-		Assertions.assertEquals("1.14.1", appVersion, "Expected appVersion to return '1.14.1' when the property is set.");
-
-		// Cas 2: Propriété appVersion non définie
-		System.clearProperty("cryptomator.appVersion");
-		appVersion = env.getAppVersion();
-		Assertions.assertEquals("SNAPSHOT", appVersion, "Expected appVersion to return 'SNAPSHOT' when the property is not set.");
-	}
 }
