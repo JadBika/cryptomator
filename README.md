@@ -87,28 +87,13 @@ mvn verify -Pcoverage
   - **Choix de la méthode :**  
     Tester la gestion des exceptions est essentiel pour garantir que l'application reste robuste même en cas d'erreurs. Ce test s'assure que la suppression de la passphrase échouée est correctement gérée, sans laisser l'interface dans un état incohérent.
 
-#### 10. `getApiBaseUrl()`
-- **Localisation :** `org.cryptomator.ui.keyloading.hub.HubConfig`
-  
-- **Test associé :** `testGetApiBaseUrlWithDevicesResourceUrl` [Lien](src/test/java/org/cryptomator/ui/keyloading/hub/HubConfigTest.java)
-  - **Choix de la méthode :**  
-    Il est important de tester ce comportement pour garantir que l'API fonctionne correctement même si `apiBaseUrl` n'est pas explicitement défini. Ce test s'assure que la méthode peut utiliser un fallback (`devicesResourceUrl`) pour dériver l'URL de base.
+#### 10. `serialized()`
 
-#### 11. `serialized()`
-
-- **Localisation :** `org.cryptomator.common.settings.VaultSettings`
+- **Localisation :** `org.cryptomator.common.settings.VaultSettings` [Lien](src/test/java/org/cryptomator/common/settings/VaultSettingsTest.java)
 
 - **Test associé :** `testSerializedWithFaker`
   - **Choix de la méthode :**
     La sérialisation des paramètres du coffre est cruciale pour la sauvegarde et le chargement des configurations utilisateur. Tester cette méthode avec des données variées assure que tous les champs sont correctement pris en compte.
-
-#### 12. `createVaultStorageLocationReadmeRtf()`
-
-- **Localisation :** `org.cryptomator.ui.addvaultwizard.ReadmeGenerator`
-
-- **Test associé :** `testCreateVaultStorageLocationReadmeRtf`
-  - **Choix de la méthode :**
-    La génération du document RTF est une fonctionnalité essentielle pour fournir aux utilisateurs des instructions claires. Tester cette méthode assure que les utilisateurs recevront un document bien formé avec toutes les informations nécessaires.
 
 <br>
 
