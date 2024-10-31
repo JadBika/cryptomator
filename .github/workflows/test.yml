@@ -6,7 +6,7 @@ on:
 
 env:
   JAVA_DIST: 'zulu'
-  JAVA_VERSION: 17
+  JAVA_VERSION: 22
 
 defaults:
   run:
