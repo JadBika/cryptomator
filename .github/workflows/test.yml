@@ -54,6 +54,5 @@ jobs:
           else
             echo "New coverage for flag ${{ matrix.jvm_flag }}: $coverage%"
           fi
-      - name: Humor log
-        run: echo "Pourquoi les programmeurs n'aiment-ils pas la nature ? Parce qu'il y a trop de bugs!!!!!!"
-         
+      - name: Réponse
+        run: echo "Parce qu'il y a trop de bugs!"
