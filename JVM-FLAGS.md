@@ -23,8 +23,6 @@ Ce flag active le Garbage Collector G1 (Garbage-First). G1GC est conçu pour off
 - **Performance :** En réduisant les temps de pause et en optimisant la gestion mémoire, G1GC augmente les performances globales, surtout pour les applications avec de grands tas (>4 Go).
 - **Observabilité :** G1GC fournit des informations granulaires sur les performances de la gestion mémoire grâce à des logs détaillés, ce qui facilite le diagnostic et l’optimisation.
 
----
-
 #### 2. `-XX:+HeapDumpOnOutOfMemoryError`
 **Description :**
 Ce flag génère automatiquement un heap dump lorsqu’une erreur OutOfMemoryError survient. Un heap dump est une capture de l’état de la mémoire de l’application à un moment donné.
@@ -33,8 +31,6 @@ Ce flag génère automatiquement un heap dump lorsqu’une erreur OutOfMemoryErr
 - **Qualité :** Permet d’identifier les fuites de mémoire ou les erreurs critiques liées à la gestion de la mémoire, ce qui contribue à la fiabilité de l’application.
 - **Performance :** Bien que le heap dump puisse ralentir légèrement le système lors de son écriture, il est essentiel pour résoudre les problèmes graves qui pourraient entraîner des interruptions prolongées.
 - **Observabilité :** Le heap dump fournit une vue détaillée de la mémoire, essentielle pour le débogage et l’analyse post-mortem des erreurs critiques.
-
----
 
 #### 3. `-XX:-AllowUserSignalHandlers`
 **Description :**
@@ -45,8 +41,6 @@ Ce flag empêche les utilisateurs de redéfinir les gestionnaires de signaux dan
 - **Performance :** En limitant la personnalisation des signaux, ce flag garantit un comportement plus prévisible, mais il peut limiter certaines optimisations spécifiques aux applications.
 - **Observabilité :** Facilite l’analyse des crashs et des interruptions, car les signaux sont gérés de manière standard par la JVM.
 
----
-
 #### 4. `-XX:+EliminateLocks`
 **Description :**
 Ce flag active l’élimination des verrous inutiles lors de l’optimisation du code par le compilateur JIT (Just-In-Time). Cela concerne principalement les blocs de synchronisation qui ne peuvent jamais être atteints de manière concurrente.
@@ -55,8 +49,6 @@ Ce flag active l’élimination des verrous inutiles lors de l’optimisation du
 - **Qualité :** Réduit les risques d’impasses et d’erreurs liées à la synchronisation excessive, améliorant la fiabilité du code.
 - **Performance :** En éliminant les verrous inutiles, ce flag réduit les surcoûts liés à la synchronisation, ce qui améliore les performances des applications monothreadées ou faiblement concurrentes.
 - **Observabilité :** Simplifie l’analyse des performances, car il réduit les points de contention artificiels dans le code.
-
----
 
 #### 5. `-XX:+TieredCompilation`
 **Description :**
