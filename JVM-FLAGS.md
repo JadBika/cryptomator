@@ -53,6 +53,7 @@ Ce flag active l’élimination des verrous inutiles lors de l’optimisation du
 #### 5. `-XX:+TieredCompilation`
 **Description :**
 Ce flag active la compilation tierée, où la JVM combine les avantages des compilateurs C1 (compilation rapide, optimisation minimale) et C2 (optimisations avancées).
+
 **Impact :**
 - **Qualité :** Améliore l’expérience utilisateur en permettant une montée en performances progressive, réduisant les délais initiaux lors de l’exécution.
 - **Performance :** La compilation tierée accélère le démarrage tout en fournissant des optimisations avancées à mesure que l’application s’exécute, ce qui maximise les performances à long terme.
