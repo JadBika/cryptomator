@@ -1,11 +1,11 @@
 ## Documentation des JVM Flags dans la GitHub action pour le cours IFT3913
 
-### Changements apportés à la [GitHub action](.github/workflows/test.yml)
+### Changements apportés à la [GitHub Action](.github/workflows/test.yml)
 
-La configuration de la GitHub Action a été mise à jour pour permettre l’exécution des tests avec cinq flags JVM différents en utilisant une **matrice**. Cela garantit que chaque flag est testé de manière isolée, améliorant ainsi la couverture des cas de test et fournissant des informations spécifiques sur leurs impacts respectifs.
+La configuration de la GitHub Action a été mise à jour pour permettre l’exécution des tests avec cinq flags JVM différents.
 
 Les principales modifications incluent :
-- **Matrice des Flags JVM :** Une matrice a été définie avec cinq flags JVM (`-XX:+UseG1GC`, `-XX:+HeapDumpOnOutOfMemoryError`, `-XX:-AllowUserSignalHandlers`, `-XX:+EliminateLocks`, `-XX:+TieredCompilation`) pour exécuter les tests de manière indépendante avec chaque flag.
+- **Matrice des JVM Flags :** Une matrice a été définie avec cinq JVM flags (`-XX:+UseG1GC`, `-XX:+HeapDumpOnOutOfMemoryError`, `-XX:-AllowUserSignalHandlers`, `-XX:+EliminateLocks`, `-XX:+TieredCompilation`) pour exécuter les tests de manière indépendante avec chaque flag.
 - **Passage des Flags à Maven :** Les flags sont transmis à Maven via la variable d’environnement `MAVEN_OPTS` pour configurer dynamiquement l’environnement d’exécution.
 - **Réinitialisation des Flags :** Après chaque exécution, les options Maven sont réinitialisées à l’aide de la commande `unset MAVEN_OPTS` pour éviter toute interférence avec les autres exécutions.
 - **Logs clairs :** Chaque étape documente explicitement le flag utilisé via des messages `echo`, facilitant le diagnostic des problèmes et l’analyse des résultats.
@@ -57,3 +57,10 @@ Ce flag active la compilation tierée, où la JVM combine les avantages des comp
 - **Qualité :** Améliore l’expérience utilisateur en permettant une montée en performances progressive, réduisant les délais initiaux lors de l’exécution.
 - **Performance :** La compilation tierée accélère le démarrage tout en fournissant des optimisations avancées à mesure que l’application s’exécute, ce qui maximise les performances à long terme.
 - **Observabilité :** La compilation tierée fournit des informations sur l’optimisation en cours, ce qui est utile pour analyser et ajuster les performances.
+
+---
+
+### Humour avec lolcommits
+
+Nous avons décidé de partager quelques-unes des captures les plus amusantes générées par [lolcommits](https://github.com/lolcommits/lolcommits). Ces images capturent l'instant précis de nos commits, ajoutant une touche humaine et humoristique au développement.
+Vous pouvez trouver ces images dans le dossier [`lolcommits-images/`](lolcommits-images/).
