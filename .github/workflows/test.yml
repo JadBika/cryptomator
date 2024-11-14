@@ -32,7 +32,7 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           cache: 'maven'
       - name: Build and Test with JVM Flag
-        run: >
+        run: |
           echo "Running tests with flag: ${{ matrix.jvm_flag }}"
           xvfb-run
           mvn -B verify -Djavafx.platform=linux -DargLine="${{ matrix.jvm_flag }}"
