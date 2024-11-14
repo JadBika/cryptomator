@@ -50,10 +50,10 @@ jobs:
           coverage=$COVERAGE
           threshold=13.43
           if (( $(echo "$coverage - $threshold <= 0.1" | bc -l) )); then
-            echo "Coverage has not improved with flag ${{ matrix.flag }}."
+            echo "Coverage has not improved with flag ${{ matrix.jvm_flag }}."
             exit 1
           else
-            echo "New coverage with flag ${{ matrix.flag }}: $coverage%"
+            echo "New coverage with flag ${{ matrix.jvm_flag }}: $coverage%"
           fi
       - name: Réponse
         run: echo "Parce qu'il y a trop de bugs🐛!!"
