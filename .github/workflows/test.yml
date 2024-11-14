@@ -56,5 +56,3 @@ jobs:
           else
             echo "New coverage with flag ${{ matrix.jvm_flag }}: $coverage%"
           fi
-      - name: Réponse
-        run: echo "Parce qu'il y a trop de bugs🐛!!"
