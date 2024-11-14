@@ -34,10 +34,7 @@ jobs:
       - name: Build and Test with JVM Flag
         run: |
           echo "Running tests with flag: ${{ matrix.jvm_flag }}"
-          xvfb-run
-          mvn -B verify -Djavafx.platform=linux -DargLine="${{ matrix.jvm_flag }}"
-          jacoco:report
-          -Pcoverage
+          xvfb-run mvn -B verify -Djavafx.platform=linux -DargLine="${{ matrix.jvm_flag }}" jacoco:report -Pcoverage
           unset MAVEN_OPTS
 
       - name: Get JaCoCo Coverage
