@@ -63,5 +63,5 @@ Ce flag active la compilation tierée, où la JVM combine les avantages des comp
 
 ### Humour avec lolcommits
 
-Nous avons décidé de partager quelques-unes des captures les plus amusantes générées par [lolcommits](https://github.com/lolcommits/lolcommits). Ces images capturent l'instant précis de nos commits, ajoutant une touche humaine et humoristique au développement.
+Nous avons décidé de partager quelques-unes des captures les plus amusantes générées par [lolcommits](https://github.com/lolcommits/lolcommits). Ces images capturent l'instant précis de nos commits, ajoutant une touche humoristique au développement.
 Vous pouvez trouver ces images dans le dossier `lolcommits-images/` ou [ici](lolcommits-images/).
