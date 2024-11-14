@@ -10,6 +10,8 @@ Les principales modifications incluent :
 - **Réinitialisation des Flags :** Après chaque exécution, les options Maven sont réinitialisées à l’aide de la commande `unset MAVEN_OPTS` pour éviter toute interférence avec les autres exécutions.
 - **Logs clairs :** Chaque étape documente explicitement le flag utilisé via des messages `echo`, facilitant le diagnostic des problèmes et l’analyse des résultats.
 
+---
+
 ### Justification du choix des JVM Flags
 
 #### 1. `-XX:+UseG1GC`
